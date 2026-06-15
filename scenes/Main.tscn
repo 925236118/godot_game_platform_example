@@ -7,7 +7,6 @@
 
 [node name="Level" parent="." instance=ExtResource("1")]
 
-# HUD
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("2")
 
