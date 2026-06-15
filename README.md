@@ -1,0 +1,2 @@
+# godot_game_platform_example
+用于测试Godot常见游戏架构的仓库
