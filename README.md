@@ -1,75 +1,64 @@
-# godot_game_platform_example
+# Action RPG Example — 动作RPG游戏架构
 
-用于测试Godot常见游戏架构的仓库。基于 Obsidian 笔记库中的 32 篇架构笔记，每个示例从 `master` 分支创建独立分支开发，互不影响。
+基于 Obsidian 笔记库 `Godot-动作RPG游戏架构.md` 的可运行示例。
 
-> **开发环境**: Godot 4.6 / Forward Plus
-> **资源说明**: 所有示例使用 `icon.svg` 或 ColorRect 彩色方块替代纹理
-
----
-
-## 分支列表
-
-| 分支名 | 玩法类型 | 核心架构要点 |
-|--------|---------|-------------|
-| `feature-2d-shooter` | 2D射击游戏 | 射击系统、敌人AI、碰撞检测、关卡波次 |
-| `feature-action-rpg` | 动作RPG | 即时战斗、装备系统、技能树、属性成长 |
-| `feature-battle-royale` | 大逃杀游戏 | 缩圈机制、空投系统、多人在线框架 |
-| `feature-board-game` | 棋类游戏 | 回合制逻辑、AI对手、棋盘状态管理 |
-| `feature-bullet-hell` | 弹幕射击游戏 | 弹幕模式生成、碰撞判定、BOSS战设计 |
-| `feature-card-game` | 卡牌类游戏 | 卡牌数据驱动、手牌管理、对战逻辑 |
-| `feature-clicker` | 点击游戏 | 数值膨胀模型、自动产出、升级树 |
-| `feature-desktop-pet` | 桌宠游戏 | AI行为、交互反馈、桌面集成 |
-| `feature-farming` | 种植类游戏 | 作物生长系统、季节机制、工具系统 |
-| `feature-fighting` | 格斗游戏 | 帧精确输入、连招系统、受击硬直 |
-| `feature-fps` | 3D第一人称射击 | 3D射击、枪械系统、弹药管理、敌人AI |
-| `feature-idle` | 放置类游戏 | 离线收益、升级链、解锁机制 |
-| `feature-match-three` | 消除类游戏 | 棋盘匹配算法、连击判定、关卡设计 |
-| `feature-metroidvania` | 银河城游戏 | 开放式地图、能力锁、回溯探索 |
-| `feature-pet-battle` | 精灵对战游戏 | 宠物收集、属性克制、技能池 |
-| `feature-platformer` | 平台跳跃游戏 | 状态机、物理跳跃、平台碰撞、关卡设计 |
-| `feature-puzzle` | 解谜游戏 | 谜题状态管理、交互反馈、关卡链 |
-| `feature-racing` | 赛车竞速游戏 | 物理驾驶、赛道系统、AI对手、计时 |
-| `feature-rhythm-game` | 音游 | 节奏判定、谱面系统、视觉反馈 |
-| `feature-roguelike` | 肉鸽游戏 | 随机生成、永久死亡、成长构筑 |
-| `feature-runner` | 跑酷游戏 | 自动奔跑、障碍生成、无尽模式 |
-| `feature-sandbox-building` | 沙盒建造游戏 | 方块放置/破坏、地形修改、物品栏 |
-| `feature-social-deduction` | 社交推理游戏 | 角色分配、投票系统、回合讨论 |
-| `feature-stealth` | 潜行类游戏 | 视野系统、警戒值、潜行机制 |
-| `feature-survival` | 生存类游戏 | 资源管理、合成系统、昼夜循环 |
-| `feature-tactical-rpg` | 战棋游戏 | 网格移动、行动顺序、地形加成 |
-| `feature-tower-defense` | 塔防游戏 | 路径系统、防御塔、敌人波次 |
-| `feature-turn-based-combat` | 回合制战斗 | ATB/CTB系统、技能冷却、状态效果 |
-| `feature-turn-based-rpg` | 回合制RPG | 队伍系统、迷宫探索、剧情驱动 |
-| `feature-tycoon` | 模拟经营游戏 | 经济系统、升级链、顾客AI |
-| `feature-vampire-survivor` | 吸血鬼幸存者类 | 自动攻击、经验升级、武器进化 |
-| `feature-visual-novel` | 视觉小说游戏 | 分支对话、好感度、CG系统 |
+> **Godot版本**: 4.6 / Forward Plus
+> **分支**: `feature-action-rpg`
+> **控制**: WASD 移动 · 空格/左键 攻击 · Shift 闪避 · ESC 暂停
 
 ---
 
-## 开发中 / 已完成
+## 玩法说明
 
-| 分支 | 状态 | 简要说明 |
-|------|------|---------|
-| `feature-platformer` | 🚧 进行中 | — |
-| `feature-action-rpg` | 🚧 进行中 | — |
-| `feature-vampire-survivor` | 🚧 进行中 | — |
+俯视角动作RPG，玩家在开放地图中击杀不断生成的敌人，获取经验升级，挑战越来越强的敌人。
 
-> 状态标记: ✅ 已完成 · 🚧 进行中 · ⬜ 待开始
+- **即时战斗**: 空格或左键攻击，攻击方向自动对准最后移动方向
+- **闪避**: Shift键快速翻滚，闪避期间无敌
+- **升级系统**: 击杀敌人获得经验，升级提升HP/MP/攻击力/速度
+- **动态难度**: 敌人会随波次成长（生命/伤害/经验值递增）
+- **生命/法力/经验条**: 顶部显示HP/MP，底部显示经验条
 
 ---
 
-## 目录模板
-
-项目采用扁平化结构，参考 Godot 默认游戏目录模板（笔记 `Godot-默认游戏目录模板.md`）：
+## 核心架构
 
 ```
-示例项目/
-├── assets/              # 资源（字体、音效等纯占位资源可省略）
-├── globals/             # 全局单例脚本
-├── scenes/              # 游戏场景
-├── scripts/             # 脚本文件
-│   ├── classes/         # 自定义类
-│   └── components/      # 可复用组件
-├── project.godot        # 项目配置
-└── icon.svg             # 项目图标
+scenes/
+├── Main.tscn           # 根场景：世界+玩家+HUD+生成器
+├── Player.tscn          # 玩家角色
+└── Enemy.tscn           # 敌人
+
+scripts/
+├── Player.gd            # 玩家：移动、攻击、闪避、升级
+├── Enemy.gd             # 敌人AI：追逐、攻击、受击
+├── EnemySpawner.gd      # 波次生成器
+└── HUD.gd               # 抬头显示
+
+globals/
+└── GameManager.gd       # 全局暂停管理 (Autoload)
 ```
+
+### 关键设计
+
+**1. 攻击系统**
+- 攻击区域（Area2D）对准玩家最后移动方向
+- 攻击命中时随机取 `attack_min ~ attack_max` 伤害
+- 攻击冷却由 `attack_rate` 控制
+
+**2. 属性系统（简化版）**
+- 主属性：HP / MP / 攻击力 / 速度
+- 每次升级：HP+20, MP+10, 攻击+3~5, 速度+5
+- 经验公式：`pow(level, 2) * 10 + level * 50`
+
+**3. 敌人波次**
+- 每3秒生成一个新敌人（上限8个）
+- 敌人属性随 `spawn_count` 增长
+- 敌人在玩家周围随机位置生成
+
+---
+
+## 笔记验证结论
+
+**准确度**: ✅ 属性系统、等级经验、战斗循环设计与笔记一致
+**实用性**: ✅ 核心战斗循环可玩，系统易于扩展（可追加装备、技能树、背包）
+**扩展性**: ✅ 笔记中词缀系统、技能树、套装等可直接模块化接入
