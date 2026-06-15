@@ -43,7 +43,6 @@ wait_time = 3.0
 autostart = true
 script = ExtResource("4")
 
-# HUD
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("1")
 
