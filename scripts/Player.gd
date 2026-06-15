@@ -32,6 +32,7 @@ var is_dead: bool = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_collision: CollisionShape2D = $AttackArea/CollisionShape2D
+@onready var attack_visual: Sprite2D = $AttackArea/AttackVisual
 
 signal hp_changed(current: float, max_hp: float)
 signal mp_changed(current: float, max_mp: float)
@@ -44,6 +45,8 @@ func _ready() -> void:
 	add_to_group("player")
 	attack_area.body_entered.connect(_on_attack_hit)
 	xp_to_next = _calc_exp_for_level(level)
+	if attack_visual:
+		attack_visual.hide()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -95,9 +98,13 @@ func attack() -> void:
 		attack_collision.shape = rect
 
 	# 攻击动画
+	if attack_visual:
+		attack_visual.show()
 	sprite.modulate = Color(1, 1, 0.8, 1)
 	await get_tree().create_timer(0.1).timeout
 	sprite.modulate = Color.WHITE
+	if attack_visual:
+		attack_visual.hide()
 
 	# 攻击检测（已连接信号）
 

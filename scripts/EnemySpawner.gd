@@ -11,9 +11,10 @@ var spawn_count: int = 0
 
 func _ready() -> void:
 	timeout.connect(_spawn_enemy)
-	# 初始生成几个敌人
-	for i in range(3):
-		_spawn_enemy()
+	# 初始生成几个敌人（延迟执行避免 add_sibling 失败）
+	call_deferred("_spawn_enemy")
+	call_deferred("_spawn_enemy")
+	call_deferred("_spawn_enemy")
 
 func _spawn_enemy() -> void:
 	# 检查当前敌人数量

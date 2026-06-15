@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" path="res://icon.svg" id="2"]
@@ -28,3 +28,8 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("2")
+
+[node name="AttackVisual" type="Sprite2D" parent="AttackArea"]
+texture = ExtResource("2")
+modulate = Color(1, 0.6, 0.1, 0.4)
+scale = Vector2(0.39, 0.31)
